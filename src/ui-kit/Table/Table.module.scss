@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td {
+      border: 1px solid #e3e6ec;
+    }
+
+    thead {
+      background: #474955;
+      text-align: left;
+
+      th {
+        padding-top: 19px;
+        padding-bottom: 16px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          > {
+            p {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 137.69%;
+              color: #ffffff;
+            }
+
+            span {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      th:nth-child(1) {
+        width: 110px;
+        padding-left: 23px;
+      }
+
+      th:nth-child(2),
+      th:nth-child(3) {
+        padding-left: 125px;
+      }
+
+      th:nth-child(2) {
+        width: 721px;
+      }
+
+      th:nth-child(3) {
+        width: 432px;
+      }
+    }
+
+    tbody {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 137.69%;
+      color: #474955;
+
+      td {
+        padding: 15px 12px;
+      }
+
+      td:nth-child(1) {
+        text-align: center;
+      }
+    }
+  }
+  .pagination{
+    padding: 0 2rem;
+  }
+}

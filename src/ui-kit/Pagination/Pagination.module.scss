@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    cursor: pointer;
+  }
+
+  .pages {
+    display: flex;
+    gap: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 137.69%;
+
+    span.active,span:hover{
+      color: #7EBC3C;
+    }
+  }
+}

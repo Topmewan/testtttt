@@ -1,0 +1,24 @@
+.input {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 16px 15px 26px;
+  background-color: #5a5c66;
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 137.69%;
+    color: #b3b7bf;
+  }
+
+  .icon {
+    width: 21px;
+    height: 21px;
+    margin-left: 1rem;
+  }
+}
