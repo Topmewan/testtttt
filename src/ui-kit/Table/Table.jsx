@@ -1,17 +1,16 @@
-import {useEffect, useState} from "react";
-import {Pagination} from "../index";
-import {useSortableData} from "../../hooks";
-import {getTotalPage} from "../../utils/helpers/number.helpers";
-import {useSearchParams} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Pagination } from "../index";
+import { useSortableData } from "../../hooks";
+import { getTotalPage } from "../../utils/helpers/number.helpers";
+import { useSearchParams } from "react-router-dom";
 
 import styles from "./Table.module.scss";
 
-
-const Table = ({columns, rows}) => {
-  const {items, requestSort} = useSortableData(rows);
+const Table = ({ columns, rows }) => {
+  const { items, requestSort } = useSortableData(rows);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const pageQuery = searchParams.get('page') || 1;
+  const pageQuery = searchParams.get("page") || 1;
   const [activePage, setActivePage] = useState(pageQuery);
 
   const rowsPerPage = 10;
@@ -24,23 +23,23 @@ const Table = ({columns, rows}) => {
   );
 
   const handlePage = (page) => {
-    setActivePage(page)
-  }
+    setActivePage(page);
+  };
 
   useEffect(() => {
-    setSearchParams({page: activePage})
-  }, [activePage, setSearchParams])
+    setSearchParams({ page: activePage });
+  }, [activePage, setSearchParams]);
 
   return (
     <div className={styles.wrapper}>
       <table className={styles.table}>
         <thead>
-        <tr>
-          {columns.map((column) => (
-            <th key={column.accessor}>
-              <div className={styles.item}>
-                <p>{column.label}</p>
-                <span onClick={() => requestSort(column.accessor)}>
+          <tr>
+            {columns.map((column) => (
+              <th key={column.accessor}>
+                <div className={styles.item}>
+                  <p>{column.label}</p>
+                  <span onClick={() => requestSort(column.accessor)}>
                     <svg
                       width="12"
                       height="7"
@@ -64,19 +63,19 @@ const Table = ({columns, rows}) => {
                       />
                     </svg>
                   </span>
-              </div>
-            </th>
-          ))}
-        </tr>
+                </div>
+              </th>
+            ))}
+          </tr>
         </thead>
         <tbody>
-        {paginationRows.map((row) => (
-          <tr key={row.id}>
-            <td>{row.id}</td>
-            <td>{row.title}</td>
-            <td>{row.body}</td>
-          </tr>
-        ))}
+          {paginationRows.map((row) => (
+            <tr key={row.id}>
+              <td>{row.id}</td>
+              <td>{row.title}</td>
+              <td>{row.body}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
       {totalPages > 1 && (

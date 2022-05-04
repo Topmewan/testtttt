@@ -3,7 +3,7 @@ import { getPagesArray } from "../../utils/helpers/array.helpers";
 import { nanoid } from "@reduxjs/toolkit";
 import styles from "./Pagination.module.scss";
 
-const Pagination = ({ activePage, totalPages,className,setActivePage}) => {
+const Pagination = ({ activePage, totalPages, className, setActivePage }) => {
   const pagesArr = getPagesArray(totalPages);
 
   return (
